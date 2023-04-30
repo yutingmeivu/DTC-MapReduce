@@ -88,5 +88,44 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
   - ###### `threshold` (int)
   - same meaning as `traverse_threshold` in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py), used for threshold in subdata groups.
   
+### Examples
+To successfully running code in local, be sure to import following packages:
+```python
+import os
+import pandas as pd
+import time
+import seaborn as sns
+import matplotlib.pyplot as plt
+import multiprocessing as mp
+import numpy as np
+from patch import partition_data, collect_info_partition, collect_info_all, bin_method_syn,\
+ma_syn, get_datatype, traverse_point, get_feature, cat_to_num, basic_eda, qtr
+from run import run_raw
+from run_mr import run_code, get_distinct, get_preprocess, label_, pre_group
+```
+Use the following code for running DTC under certain setting for dataset `dt`, notice that DTC accept both numerical and categorical variables:
+```python
+run_raw(dt, n_splits = 10, n_repeats = 1, traverse_threshold = 25, min_samples_split = 1850, \
+        max_depth = 11, info_method = 'variance', na_method = 'recursive', bins = 'tanh', outlier_=False,\
+       fill = ['Self-emp-not-inc', 'Other-service', 'South'])
+```
+Use the following code format for running DTCMR:
+```python
+pool = mp.Pool(20)
+precisionl = []
+endl = []
+subsample_num = 1000
+group = 500
+method = 'variance'
+for i in range(10):
+    precision, end = run_code(d_s, subsample_num, group, method)
+    precisionl.append(precision)
+    endl.append(end)
+mpr = np.mean(precisionl)
+mt = np.mean(endl)
+pool.close()
+print(f'mean computation time {round(mt, 3)} seconds with mean precision at {round(mpr, 3)} with total {subsample_num} samples with groups S = {group} with impurity function as {method}.')
+```
+  
 ## Google Colab
 Code and dataset is also avaliable in [Google Colab](https://drive.google.com/drive/folders/1BU97Eyspj8umJahqHWMd2Nyq5MFobw9K?usp=share_link)! 🤩
