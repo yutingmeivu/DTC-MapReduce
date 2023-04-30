@@ -75,5 +75,4 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
   - ###### `rule` (string)
   - Not specified by user
   
-Code and dataset is also avaliable in Google Colab:
-### [Open in Colab](https://drive.google.com/drive/folders/1BU97Eyspj8umJahqHWMd2Nyq5MFobw9K?usp=share_link)
+Code and dataset is also avaliable in [Google Colab](https://drive.google.com/drive/folders/1BU97Eyspj8umJahqHWMd2Nyq5MFobw9K?usp=share_link)!🤩
