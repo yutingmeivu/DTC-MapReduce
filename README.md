@@ -19,7 +19,7 @@ setting is measured.
 
 ## DTC structure
 
-###Goal: 
+### Goal: 
 The overall goal of DTC is to find best splits at each node which get informative and effective
 tree in unseen dataset, with both maximizing infomation gain to control overall reduction
 in uncertainty and minimizing impurity of each node with accurate label for controlling
