@@ -88,6 +88,8 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
   - ###### `threshold` (int)
   - same meaning as `traverse_threshold` in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py), used for threshold in subdata groups.
   
+### [treemr.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/treemr.py)
+  
 ### Examples
 To successfully running code in local, be sure to import following packages:
 ```python
@@ -109,7 +111,7 @@ run_raw(dt, n_splits = 10, n_repeats = 1, traverse_threshold = 25, min_samples_s
         max_depth = 11, info_method = 'variance', na_method = 'recursive', bins = 'tanh', outlier_=False,\
        fill = ['Self-emp-not-inc', 'Other-service', 'South'])
 ```
-Use the following code format for running DTCMR under train test split:
+Use the following code format for running DTCMR under train test split with `d_s` dataset:
 ```python
 pool = mp.Pool(20)
 precisionl = []
