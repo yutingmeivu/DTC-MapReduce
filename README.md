@@ -44,7 +44,7 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
 ## Usage
 
 ### [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py)
-  - DTC implementation
+  DTC implementation code
   #### Parameters introduction in Node
   - ###### `X` (DataFrame)
   - Dataset for training excluding target variable
