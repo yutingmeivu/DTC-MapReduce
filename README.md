@@ -89,11 +89,25 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
   - same meaning as `traverse_threshold` in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py), used for threshold in subdata groups.
   
 ### [run.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/run.py)
-  DTC model main function for running
-  #### Parameters in `run_raw`:
+  DTC model main function for running using `run_raw`
+  #### Parameters:
   Skip the params introduced in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py)
   - `fill` (list)
-  - Fill NA in test dataset based on output in running `run_raw`. Result of missing value imputation in training set is printed out after instantiating an object in Node and use `.grow_tree`.
+  - Fill NA in test dataset based on output in running `run_raw`. Result of missing value imputation in training set is printed out after instantiating an object in Node and use `.grow_tree()`.
+  #### Expected output:
+  - Print out Max precision score, Mean precision score with standard deviation, Mean computational time(seconds) per fold.
+  
+### [run_mr.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/run_mr.py)
+  DTCMR main function for running using `run_code`
+  #### Parameters:
+  - `d_s` (DataFrame)
+  - Dataset including all features and target variable without partition. (🥲 I forgot to set target variable name as a param, anyway it's not that important..)
+  - `sub_index`
+  - Less than or equal to number of observations in overall dataset, if want to test model performance in subset.
+  - `group` (int)
+  - Number of subsamples inside a group. 
+  - `method` (string)
+  - Impurity function name `variance, gini`, as same as `info_method` in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py).  
   
 ### Examples
 To successfully running code in local, be sure to import following packages:
