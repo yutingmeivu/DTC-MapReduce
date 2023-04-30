@@ -1,6 +1,9 @@
-# Comparision of performance of nonlinear optimization method used in accelerating multi neuron network
+# Decision Tree Classification Model with Map Reduce
 
-we compared two optimization method: conjugate gradient method with classic gradient descent in fully connected multi neuron network. Newton's method, regula falsi and secant method would be covered. 
+This is a project for designing and implementing Decision Tree Classification(DTC) model
+by building from scratch and use map reduce strategy for a prediction task on ‘Adult’dataset.
+Possible scenario for model implementation is assumed and model performance under certain
+setting is measure
 
 ## Table of Contents
 
@@ -34,7 +37,7 @@ homogeneity of labels in subsets. We will assume DTCMR is using under big data s
 The MapReduce strategy divides a complex task into smaller sub-tasks that can be processed
 independently in parallel across a cluster of computers. The process consists of two main
 stages: the map stage and the reduce stage. We designed pipeline with using map reduce under DTC model as follows:
-
+![pipeline for DTCMR](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/map.png)
 
 
 ## Usage
