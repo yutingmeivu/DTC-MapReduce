@@ -107,7 +107,10 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
   - `group` (int)
   - Number of subsamples inside a group. 
   - `method` (string)
-  - Impurity function name `variance, gini`, as same as `info_method` in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py).  
+  - Impurity function name `variance, gini`, as same as `info_method` in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py).
+  
+### [patch.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/patch.py)
+  A hodgepodge collection of functions for either for getting statistics from overall dataset using map reduce before tree start growing or EDA and preprocessing of original dataset.
   
 ### Examples
 To successfully running code in local, be sure to import following packages:
