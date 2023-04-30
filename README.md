@@ -88,7 +88,12 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
   - ###### `threshold` (int)
   - same meaning as `traverse_threshold` in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py), used for threshold in subdata groups.
   
-### [treemr.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/treemr.py)
+### [run.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/run.py)
+  DTC model main function for running
+  #### Parameters in `run_raw`:
+  Skip the params introduced in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py)
+  - `fill` (list)
+  - Fill NA in test dataset based on output in running `run_raw`. Result of missing value imputation in training set is printed out after instantiating an object in Node and use `.grow_tree`.
   
 ### Examples
 To successfully running code in local, be sure to import following packages:
