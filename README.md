@@ -44,7 +44,7 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
 ## Usage
 
 ### [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py)
-  DTC implementation code
+  DTC implementation
   #### Parameters introduction in Node
   - ###### `X` (DataFrame)
   - Dataset for training excluding target variable
@@ -71,9 +71,22 @@ stages: the map stage and the reduce stage. We designed pipeline with using map 
   - ###### `na_method` (string)
   - `mean, median, recursive`. Missing value imputation method specified by user, default as `mean`. Notice that if feature is normally distributed, result from three methods would be similar.
   - ###### `bins` (int, string)
-  - Bin number method specified by user, with values can be `sturges, scott, tanh, logistic`. Read more specific meaning in [report](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/DTCMR.pdf).
+  - Bin number method specified by user, with values can be either number or `sturges, scott, tanh, logistic`. Read more specific meaning in [report](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/DTCMR.pdf).
   - ###### `rule` (string)
   - Not specified by user
+
+### [treemr.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/treemr.py)
+  DTCMR implementation
+  #### Parameters introduction in Node_parallel
+  Params with same name as Node has the same meaning, so just skiped duplicated ones.
+  - ###### `features_df, cate_type, traverse_all` (list)
+  - Global variable, not specified by user. `features_df`: features for traverse. `cate_type`: list of categorical variable names. `traverse_all`: traverse point with respective of features grasped from information in original overall dataset using map reduce strategy before implementing tree growth.
+  - ###### `method` (string)
+  - Fixed as `bin` method in DTCMR due to consideration of complexity and latent inconsistent information from subgroup if implementing other bin number generation method.
+  - ###### `window` (int)
+  - Time window for moving average for numerical variable.
+  - ###### `threshold` (int)
+  - same meaning as `traverse_threshold` in [tree.py](https://github.com/yutingmeivu/DTC-MapReduce/blob/main/code/tree.py), used for threshold in subdata groups.
   
 ## Google Colab
 Code and dataset is also avaliable in [Google Colab](https://drive.google.com/drive/folders/1BU97Eyspj8umJahqHWMd2Nyq5MFobw9K?usp=share_link)! 🤩
