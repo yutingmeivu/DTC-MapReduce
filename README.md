@@ -103,13 +103,13 @@ ma_syn, get_datatype, traverse_point, get_feature, cat_to_num, basic_eda, qtr
 from run import run_raw
 from run_mr import run_code, get_distinct, get_preprocess, label_, pre_group
 ```
-Use the following code for running DTC under certain setting for dataset `dt`, notice that DTC accept both numerical and categorical variables:
+Use the following code for running DTC under certain setting for dataset `dt` under repeated stratified k fold cross validation, notice that DTC accept both numerical and categorical variables:
 ```python
 run_raw(dt, n_splits = 10, n_repeats = 1, traverse_threshold = 25, min_samples_split = 1850, \
         max_depth = 11, info_method = 'variance', na_method = 'recursive', bins = 'tanh', outlier_=False,\
        fill = ['Self-emp-not-inc', 'Other-service', 'South'])
 ```
-Use the following code format for running DTCMR:
+Use the following code format for running DTCMR under train test split:
 ```python
 pool = mp.Pool(20)
 precisionl = []
