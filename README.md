@@ -128,4 +128,4 @@ print(f'mean computation time {round(mt, 3)} seconds with mean precision at {rou
 ```
   
 ## Google Colab
-Code and dataset is also avaliable in [Google Colab](https://drive.google.com/drive/folders/1BU97Eyspj8umJahqHWMd2Nyq5MFobw9K?usp=share_link)! 🤩
+Code and dataset is also avaliable in [Google Colab](https://drive.google.com/drive/folders/1BU97Eyspj8umJahqHWMd2Nyq5MFobw9K?usp=share_link)! 🤩 Try [DTCMR.ipynb](https://colab.research.google.com/drive/11ADyP9g0bR7YR1RxdI_8F1mhYx9PxGqN)!
